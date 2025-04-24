@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>ToDo</title>
+</head>
+<body>
+    <div class="container">
+        <p class="ToDo">ToDo List</p>
+
+        <div class="list">
+            <ul id="task-list" class="list-group">
+
+                <li id="empty-list" class="list-empty">
+                    <div class="empty-list-title"><p>Дел нет, можно немного отдохнуть</p></div>
+                </li>
+
+                <li class="list-group-item">
+                    <span class="task-title">Что-то нужно сделать</span>
+                    <div class="group-item-button">
+                        <button type="button" data-action="done" id="btn-done" class="btn-action done">
+							<img src="icons/done.svg" alt="Done">
+						</button>
+						<button type="button" data-action="delete" id="btn-delete" class="btn-action delete">
+							<img src="icons/delete.svg" alt="Done">
+						</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="create">
+            <div class="create-body">
+                <form id="form">
+
+                    <div class="form-input">
+                        <img src="icons/edit.svg" alt="">
+                        <input type="text" class="form-control" id="input" placeholder="Новый квест" required>
+                    </div>
+                    <div class="form-input-buttons">
+                        <button type="submit" class="btn btn-submit">Добавить</button>
+                        <button type="reset" class="btn btn-reset">Удалить сделанные</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/todo.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  *,
+  *:before,
+  *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  :focus,
+  :active {
+    outline: none;
+  }
+  a:focus,
+  a:active {
+    outline: none;
+  }
+  nav,
+  footer,
+  header,
+  aside {
+    display: block;
+  }
+  html,
+  body {
+    height: max-content;
+    overflow-x: hidden;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  input,
+  button,
+  textarea {
+    font-family: inherit;
+  }
+  input::-ms-clear {
+    display: none;
+  }
+  button {
+    cursor: pointer;
+  }
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  a,
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  ul li {
+    list-style: none;
+  }
+  img {
+    vertical-align: top;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'Marck';
+    src: url('../fonts/ofont.ru_Marck Script.ttf') format('truetype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Pacifico';
+    src: url('../fonts/ofont.ru_Pacifico.ttf') format('truetype');
+    font-weight: 400;
+  }
+
+  body {
+    background-color: #E7E7E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    width: 650px;
+    background-color: #F6F4D2;
+  }
+
+  .ToDo {
+    font-family: 'Pacifico', sans-serif;
+    font-size: 36px;
+    color: #000000;
+    display: block;
+    margin: 15px 0 0 15px;
+  }
+
+  .list-group li {
+    font-family: 'Marck', sans-serif;
+    font-size: 24px;
+    color: #5D5858;
+    height: 35px;
+    width: 100%;
+    border-bottom: 1px solid #B9BA9E;
+    padding: 0 60px 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .list {
+    margin-top: 46px;
+  }
+  .empty-list-title {
+    font-size: 32px;
+    margin-top: auto;
+  }
+  .group-item-button {
+    height: max-content;
+    gap: 13px;
+  }
+  .btn-action {
+    background: none;
+    opacity: 0.6;
+    transition: opacity 0.5;
+  }
+  .active {
+    opacity: 1;
+  }
+.task-title {
+  margin-top: auto;
+}
+  .create {
+    background-color: #EDE9AC;
+  }
+  .form-input {
+    width: 100%;
+    padding-left: 15px;
+    height: 35px;
+    border-bottom: 1px solid #B9BA9E;
+    display: flex;
+  }
+  .form-input img {
+    height: 20px;
+    margin-top: auto;
+  }
+  .form-control {
+    font-family: 'Marck', sans-serif;
+    font-size: 24px;
+    color: #5D5858;
+    background: none;
+    height: 22px;
+    margin-top: auto;
+  }
+  .form-control::placeholder {
+    opacity: 0.4;
+  }
+  .form-input-buttons {
+    display: flex; 
+    padding-left: 39px;
+    height: 35px;
+    align-items: center;
+    gap: 39px;
+  }
+  .btn {
+    height: 25px;
+    border-radius: 10px;
+    background: #F6F4D2;
+    border: 1px solid #5D5858;
+    font-size: 14px;
+    color: #5D5858;
+    font-family: 'Pacifico', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-submit {
+    padding: 0 15px 0 15px;
+  }
+  .btn-reset {
+    padding: 0 24px 0 24px;
+  }
