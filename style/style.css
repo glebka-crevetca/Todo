@@ -105,6 +105,7 @@
     margin: 15px 0 0 15px;
   }
 
+
   .list-group li {
     font-family: 'Marck', sans-serif;
     font-size: 24px;
@@ -124,6 +125,16 @@
     font-size: 32px;
     margin-top: auto;
   }
+  .empty-line {
+    height: 35px;
+    width: 100%;
+    border-bottom: 1px solid #B9BA9E;
+  }
+  .none {
+    display: none !important;
+  }
+
+
   .group-item-button {
     height: max-content;
     gap: 13px;
@@ -131,14 +142,21 @@
   .btn-action {
     background: none;
     opacity: 0.6;
-    transition: opacity 0.5;
   }
+  .btn-action img {
+    pointer-events: none;
+  } 
   .active {
     opacity: 1;
   }
-.task-title {
-  margin-top: auto;
-}
+  .task-title {
+    margin-top: auto;
+  }
+  .task-title--done {
+    color: rgba(93, 88, 88, 0.6);
+    text-decoration: line-through #5D5858;
+  }
+
   .create {
     background-color: #EDE9AC;
   }
