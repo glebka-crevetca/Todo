@@ -11,15 +11,16 @@ form.addEventListener('reset', deleteDoneTasks)
 taskList.addEventListener('click', deleteTask);
 taskList.addEventListener('click', doneTask);
 
+
 function addTask(event) {
     event.preventDefault();
 
     const tasksCounter = taskList.children.length;
-    const taskText = tasksCounter + '. ' + taskInput.value;
+    const taskText = '. ' + taskInput.value;
 
     const taskHtml = `
                 <li class="list-group-item">
-                    <span class="task-title">${taskText}</span>
+                    <span class="task-title"><p class='count'></p> ${taskText}</span>
                     <div class="group-item-button">
                         <button type="button" data-action="done" class="btn-action done">
 							<img src="icons/done.svg" alt="Done">
@@ -40,6 +41,8 @@ function addTask(event) {
     if (tasksCounter <=6 && tasksCounter > 1) {
         linesContainer.children[tasksCounter - 2].classList.add('none');
     }
+
+    counterTasks();
 };
 
 function deleteTask(event) {
@@ -60,6 +63,8 @@ function deleteTask(event) {
     if (tasksCounter <=6 && tasksCounter > 1) {
         linesContainer.children[tasksCounter - 2].classList.remove('none');
     }
+
+    counterTasks();
 }
 
 function doneTask(event) {
@@ -74,13 +79,15 @@ function doneTask(event) {
     const parentNode = event.target.closest('.list-group-item');
     const taskTitle = parentNode.querySelector('.task-title');
     taskTitle.classList.toggle('task-title--done');
+
+    counterTasks();
 }
 
 function deleteDoneTasks(event) {
     event.preventDefault();
     
     const tasksCounter = taskList.children.length;
-    let doneTasks = tasksCounter;
+    let currentTasks = tasksCounter;
     const tasks = taskList.querySelectorAll('li.list-group-item');
 
     Array.from(tasks).reverse().forEach(task => {
@@ -89,21 +96,41 @@ function deleteDoneTasks(event) {
 
         if (doneButton) {
             task.remove();
+            currentTasks-=1;
         }
 
-        doneTasks-=1;
+        if (currentTasks === 1) {
+            emptyList.classList.remove('none');
+        }
     })
 
-    if (doneTasks > 5) {
-        return
-    }
+    const emptyLines = linesContainer.querySelectorAll('.empty-line');
+    const emptyLinesNeeded = Math.max(0, 7 - currentTasks);
 
-    for (var i = 0; i <= (5 - doneTasks); i++) {
-        linesContainer.children[i].classList.remove('none');
-    }
+    emptyLines.forEach((item, index) => {
+        if (index < emptyLinesNeeded) {
+            item.classList.remove('none');
+        } else {
+            item.classList.add('none');
+        }
+    })
 
-    if (doneTasks === 1) {
-        emptyList.classList.remove('none');
+    if (taskList.children.length === 1) {
+        emptyLines.classList.remove('none');
+    } else {
+        emptyLines.classList.add('none');
     }
-    console.log(doneTasks);
+    
+    counterTasks();
+}
+
+function counterTasks() {
+
+    const allTasks = taskList.querySelectorAll('li.list-group-item');
+
+    Array.from(allTasks).forEach((item, index) => {
+
+        const countTask = item.querySelector('p.count');
+        countTask.textContent = (index + 1);
+})
 }
