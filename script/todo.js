@@ -4,6 +4,7 @@ const taskList = document.querySelector('#task-list');
 const emptyList = document.querySelector('#empty-list');
 const linesContainer = document.querySelector('#empty-lines');
 
+let tasks = [];
 
 form.addEventListener('submit', addTask);
 form.addEventListener('reset', deleteDoneTasks)
@@ -16,11 +17,22 @@ function addTask(event) {
     event.preventDefault();
 
     const tasksCounter = taskList.children.length;
+
     const taskText = '. ' + taskInput.value;
 
+    const newTask = {
+        id: Date.now(),
+        text: taskText,
+        done: false
+    };
+
+    tasks.push(newTask)
+
+    const cssClass = newTask.done ? "task-title task-title--done": "task-title";
+
     const taskHtml = `
-                <li class="list-group-item">
-                    <span class="task-title"><p class='count'></p> ${taskText}</span>
+                <li id="${newTask.id}" class="list-group-item">
+                    <span class="${cssClass}"><p class='count'></p> ${newTask.text}</span>
                     <div class="group-item-button">
                         <button type="button" data-action="done" class="btn-action done">
 							<img src="icons/done.svg" alt="Done">
@@ -52,6 +64,12 @@ function deleteTask(event) {
     }
 
     const parentNode = event.target.closest('.list-group-item');
+
+    const id = parentNode.id
+
+    tasks = tasks.filter((task) => task.id != id)
+    console.log(tasks);
+
     parentNode.remove();
         
     const tasksCounter = taskList.children.length;
