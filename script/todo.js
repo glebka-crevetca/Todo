@@ -68,7 +68,6 @@ function deleteTask(event) {
     const id = parentNode.id
 
     tasks = tasks.filter((task) => task.id != id)
-    console.log(tasks);
 
     parentNode.remove();
         
