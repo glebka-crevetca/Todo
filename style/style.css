@@ -101,7 +101,7 @@ body {
 @media (max-width: 420px) {
   .container {
     height: auto;
-    main-height: 100vh;
+    min-height: 100vh;
     position: relative;
     margin-bottom: auto;
     display: flex;
