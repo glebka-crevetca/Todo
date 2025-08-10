@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>ToDo</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div>
-            <p class="ToDo">ToDo List</p>
-            <p class="text">Привет, это мой небольшой учебный проект. Здесь реализован ToDo list. Можно создавать и удалять заметки, а также они сохраняются даже при обновлении страницы. Функционал весьма не сложный, но на мой взгляд получилось всё равно прикольно. А ещё этот текст здесь только для того чтобы забить свободное место</p>
-        </div>
+      <div>
+        <p class="ToDo">ToDo List</p>
+        <p class="text">
+          Привет, это мой небольшой учебный проект. Здесь реализован ToDo list.
+          Можно создавать и удалять заметки, а также они сохраняются даже при
+          обновлении страницы. Функционал весьма не сложный, но на мой взгляд
+          получилось всё равно прикольно. А ещё этот текст здесь только для того
+          чтобы забить свободное место
+        </p>
+      </div>
 
-        <div><div class="list">
-            <ul id="task-list" class="list-group">
-
-                <!--<li id="empty-list" class="list-empty">
+      <div>
+        <div class="list">
+          <ul id="task-list" class="list-group">
+            <!--<li id="empty-list" class="list-empty">
                     <div class="empty-list-title"><p>Дел нет, можно немного отдохнуть</p></div>
                 </li>-->
 
-                <!-- <li class="list-group-item">
+            <!-- <li class="list-group-item">
                     <span class="task-title">Что-то нужно сделать</span>
                     <div class="group-item-button">
                         <button type="button" data-action="done" class="btn-action done">
@@ -31,33 +37,42 @@
 						</button>
                     </div>
                 </li> -->
-            </ul>
+        </ul>
+        
         </div>
         <div class="empty-lines" id="empty-lines">
-            <div class="empty-line"></div>
-            <div class="empty-line"></div>
-            <div class="empty-line"></div>
-            <div class="empty-line"></div>
-            <div class="empty-line"></div>
+          <div class="empty-line"></div>
+          <div class="empty-line"></div>
+          <div class="empty-line"></div>
+          <div class="empty-line"></div>
+          <div class="empty-line"></div>
         </div>
 
         <div class="create">
-            <div class="create-body">
-                <form id="form">
-
-                    <div class="form-input">
-                        <img src="icons/edit.svg" alt="">
-                        <input type="text" class="form-control" id="input" placeholder="Новый квест" required>
-                    </div>
-                    <div class="form-input-buttons">
-                        <button type="submit" class="btn btn-submit">Добавить</button>
-                        <button type="reset" class="btn btn-reset">Удалить сделанные</button>
-                    </div>
-                </form>
-            </div>
-        </div></div>
+          <div class="create-body">
+            <form id="form">
+              <div class="form-input">
+                <img src="icons/edit.svg" alt="" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input"
+                  placeholder="Новый квест"
+                  required
+                />
+              </div>
+              <div class="form-input-buttons">
+                <button type="submit" class="btn btn-submit">Добавить</button>
+                <button type="reset" class="btn btn-reset">
+                  Удалить сделанные
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="script/todo.js"></script>
-</body>
+  </body>
 </html>
